@@ -14,12 +14,12 @@ public class WordGram {
 	private int myHash;         // cached hash value
 
 	/**
-	 * Create WordGram based on an array of Strings, source.
-	 The WordGram includes all the elements in source, starting 
-	 from index start.
-	 * @param source
-	 * @param start
-	 * @param size
+	 * Create a WordGram based on an array of Strings, source.
+	 The WordGram includes the elements in source beginning at 
+	 index start. Its size is equal to the size parameter.
+	 * @param source is the array that WordGram is based on
+	 * @param start is the starting index for the array
+	 * @param size is the size of WordGram
 	 */
 	public WordGram(String[] source, int start, int size) {
 		ArrayList<String> temp = new ArrayList<String>();
@@ -53,7 +53,11 @@ public class WordGram {
 	}
 
 
-	@Override
+	/**
+	 * Check if two WordGrams are the same, meaning they
+	 * are the same size and are made up of the same words
+	 */
+	 @Override
 	public boolean equals(Object o) {
 		if (! (o instanceof WordGram) || o == null){
 			return false;
@@ -73,6 +77,9 @@ public class WordGram {
 		return true;
 	}
 
+	 /**
+	 * Initialize myHash with the word's hashCode
+	 */
 	@Override
 	public int hashCode(){
 		if (myHash == 0 && myWords.length > 0)
@@ -84,7 +91,7 @@ public class WordGram {
 	
 
 	/**
-	 * Remove the first word in myWords, and add a new word at the end
+	 * Remove the first word in myWords, and adds a new word at the end
 	 * @param last is last String of returned WordGram
 	 * @return
 	 */
@@ -99,6 +106,10 @@ public class WordGram {
 		return new WordGram(shifted, 0, shifted.length);
 	}
 
+	 /**
+	 * Combine all the elements of myWords into one String, with
+	 * each word separated by a space.
+	 */
 	@Override
 	public String toString(){
 		if (myToString == null)
