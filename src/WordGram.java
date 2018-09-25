@@ -23,7 +23,6 @@ public class WordGram {
 	 */
 	public WordGram(String[] source, int start, int size) {
 		ArrayList<String> temp = new ArrayList<String>();
-		// TODO: initialize myWords and ...
 		for (int i = start; i < size + start; i++)
 		{
 			temp.add(source[i]);
@@ -50,7 +49,6 @@ public class WordGram {
 	 * @return
 	 */
 	public int length(){
-		// TODO: change this
 		return myWords.length;
 	}
 
@@ -60,7 +58,6 @@ public class WordGram {
 		if (! (o instanceof WordGram) || o == null){
 			return false;
 		}
-	    // TODO: complete this method
 		WordGram wg = (WordGram) o;
 		if (this.length() != wg.length())
 		{
@@ -78,7 +75,6 @@ public class WordGram {
 
 	@Override
 	public int hashCode(){
-		// TODO: complete this method
 		if (myHash == 0 && myWords.length > 0)
 		{
 			myHash = this.toString().hashCode();
@@ -94,7 +90,6 @@ public class WordGram {
 	 */
 	public WordGram shiftAdd(String last) {
 		WordGram wg = new WordGram(myWords, 0, myWords.length);
-		// TODO: Complete this method
 		String[] shifted = new String[myWords.length];
 		for (int i = 0; i < shifted.length-1; i++)
 		{
@@ -106,23 +101,8 @@ public class WordGram {
 
 	@Override
 	public String toString(){
-		// TODO: Complete this method
 		if (myToString == null)
 		{
-			// myToString = "";
-			// if (myWords.length == 1)
-			// {
-			// 	myToString = myWords[0];
-			// 	return myToString;
-			// }
-			// for (int i = 0; i < myWords.length; i=i+2)
-			// {
-			// 	myToString = myToString + myWords[i+1];
-			// 	if (i != myWords.length-1)
-			// 	{
-			// 		myToString = myToString + " ";
-			// 	}
-			// }
 			myToString = String.join(" ", myWords);
 		}	
 		return myToString;
